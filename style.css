@@ -1,0 +1,182 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+h1, h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+p {
+    color: #555;
+}
+
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInDown 0.8s ease forwards;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #f4f4f4;
+}
+
+section {
+    padding: 60px 20px;
+    margin-top: 60px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section#home {
+    text-align: center;
+    animation-delay: 0.2s;
+}
+
+section#home img {
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 0.4s;
+}
+
+section#about, section#skills, section#projects, section#contact, section#portfolio, section#blog {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    width: 80%;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.skill-item {
+    margin-bottom: 15px;
+}
+
+.skill-bar {
+    height: 10px;
+    background-color: #4caf50;
+    border-radius: 5px;
+    width: 0;
+    animation: fillSkillBar 1s ease forwards;
+}
+
+@keyframes fillSkillBar {
+    to {
+        width: var(--skill-width);
+    }
+}
+
+.skill-item:nth-child(1) .skill-bar { --skill-width: 90%; }
+.skill-item:nth-child(2) .skill-bar { --skill-width: 80%; }
+.skill-item:nth-child(3) .skill-bar { --skill-width: 75%; }
+.skill-item:nth-child(4) .skill-bar { --skill-width: 80%; }
+.skill-item:nth-child(5) .skill-bar { --skill-width: 90%; }
+
+.project-item {
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.project-item h3 a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.project-item h3 a:hover {
+    color: #4caf50;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.gallery-item {
+    flex: 1 1 calc(33% - 20px);
+    background: #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.blog-post {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.blog-post h3 {
+    margin-top: 0;
+}
+
+article {
+    animation-delay: 0.5s;
+}
